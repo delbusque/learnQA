@@ -8,8 +8,10 @@ test('First Test', async ({ page }) => {
 
 test("Simple Click Test", async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/')
-    await page.locator('text=Add/Remove Elements').click()
+    await page.click('text=Add/Remove Elements')
     await page.pause()
-    await page.locator('text=Add Element').click()
+
+    const element = page.locator('text=Add Element')
+    await element.click()
     await page.pause()
 })
