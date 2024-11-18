@@ -2,3 +2,4 @@
 node_modules/
 
 *.webm
+.last-run.json
