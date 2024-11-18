@@ -1,3 +1,4 @@
 # Private Node Modules
 node_modules/
-test-results/
+
+*.webm
