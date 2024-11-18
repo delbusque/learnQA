@@ -2,12 +2,12 @@ const { PlaywrightTestConfig } = require('@playwright/test')
 
 const config = {
     retries: 1,
-    timeout: 60000,
+    timeout: 10000,
     use: {
         headless: true,
         viewport: { width: 1280, height: 720 },
-        video: 'off',
-        screenshots: 'off'
+        video: 'retain-on-failure',
+        screenshots: 'only-on-failure'
     },
 
     projects: [

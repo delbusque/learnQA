@@ -6,11 +6,15 @@ test("First Test", { tag: ['@smoke'] }, async ({ page }) => {
     await expect(title).toHaveText('Playwright')
 })
 
-test("Simple Click Test @regressions-smoke", async ({ page }) => {
+test.only("Simple Click Test @regressions-smoke", async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/')
     await page.click('text=Add/Remove Elements')
+    // await page.screenshot({ path: 'screenshot.jpg', fullPage: true })
+
     const element = page.locator('text=Add Element')
+    // await element.screenshot({ path: 'buttonScreenshot.png' })
     await element.click()
+
 })
 
 test("Dublicated Test @regression", async ({ page }) => {
