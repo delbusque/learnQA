@@ -4,7 +4,7 @@ const config = {
     retries: 1,
     timeout: 10000,
     use: {
-        headless: true,
+        headless: false,
         viewport: { width: 1280, height: 720 },
         video: 'retain-on-failure',
         screenshots: 'only-on-failure'
