@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test')
 
-test.describe("Smoke tests", () => {
+test.describe.parallel("Smoke tests", () => {
 
     test.beforeEach(async ({ page }) => {
         await page.goto('https://the-internet.herokuapp.com/')
@@ -19,7 +19,6 @@ test.describe("Smoke tests", () => {
         await element.click()
     })
     test("Form Test @smoke", async ({ page }) => {
-        await page.goto('https://the-internet.herokuapp.com/')
         await page.click('text=Form Authentication')
     })
 })
