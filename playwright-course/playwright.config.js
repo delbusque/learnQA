@@ -1,7 +1,7 @@
 const { PlaywrightTestConfig } = require('@playwright/test')
 
 const config = {
-    retries: 1,
+    retries: 0,
     timeout: 10000,
     reporter: './reporter.js',
     use: {
