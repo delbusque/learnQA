@@ -7,8 +7,9 @@ const config = {
     use: {
         headless: false,
         viewport: { width: 1280, height: 720 },
-        video: 'retain-on-failure',
-        screenshots: 'only-on-failure'
+        video: 'off',
+        screenshots: 'only-on-failure',
+        trace: 'on-first-retry',
     },
 
     projects: [

@@ -27,3 +27,5 @@ test.describe('Authentication', () => {
 
 // npx playwright codegen --save-storage=auth/auth.json parabank.parasoft.com
 // npx playwright codegen --load-storage=auth/auth.json parabank.parasoft.com
+
+// npx playwright codegen --viewport-size=800,600 --color-scheme=dark x.com 
