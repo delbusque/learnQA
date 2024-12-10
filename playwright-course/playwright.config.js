@@ -1,7 +1,7 @@
 const { PlaywrightTestConfig } = require('@playwright/test')
 
 const config = {
-    retries: 1,
+    retries: 0,
     timeout: 15000,
     reporter: './reporter.js',
     use: {
@@ -9,7 +9,7 @@ const config = {
         viewport: { width: 1280, height: 720 },
         video: 'off',
         screenshots: 'only-on-failure',
-        trace: 'on-first-retry',
+        trace: 'on',
     },
 
     projects: [

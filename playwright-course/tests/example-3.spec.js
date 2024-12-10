@@ -25,7 +25,7 @@ test.describe('Examples', () => {
         await page.pause()
     })
 
-    test.only('iFrame', async ({ page }) => {
+    test('iFrame', async ({ page }) => {
         await page.goto('https://the-internet.herokuapp.com/iframe')
         const iFrame = page.frameLocator('#mce_0_ifr').locator('#tinymce')
         await expect(iFrame.getByRole('paragraph')).toHaveText('Your content goes here.')
