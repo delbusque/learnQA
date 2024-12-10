@@ -16,12 +16,19 @@ test.describe('Examples', () => {
         await page.pause()
     })
 
-    test.only('Drop down', async ({ page }) => {
+    test('Drop down', async ({ page }) => {
         await page.goto('https://the-internet.herokuapp.com/dropdown')
         await page.locator('select').selectOption('1')
         await expect(page.locator('select')).toHaveValue('1')
         await page.locator('#dropdown').selectOption({ label: 'Option 2' })
         await expect(page.locator('#dropdown')).toHaveValue('2')
+        await page.pause()
+    })
+
+    test.only('iFrame', async ({ page }) => {
+        await page.goto('https://the-internet.herokuapp.com/iframe')
+        const iFrame = page.frameLocator('#mce_0_ifr').locator('#tinymce')
+        await expect(iFrame.getByRole('paragraph')).toHaveText('Your content goes here.')
         await page.pause()
     })
 })
