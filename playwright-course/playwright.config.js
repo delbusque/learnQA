@@ -1,8 +1,8 @@
 const { PlaywrightTestConfig } = require('@playwright/test')
 
 const config = {
-    retries: 0,
-    timeout: 100000,
+    retries: 1,
+    timeout: 10000,
     reporter: './reporter.js',
     use: {
         headless: false,
@@ -14,11 +14,11 @@ const config = {
 
     projects: [
         {
-            name: 'Chrome',
+            name: 'chrome',
             use: { browserName: 'chromium' }
         },
         {
-            name: 'Webkit',
+            name: 'webkit',
             use: { browserName: 'webkit' }
         }
     ]
