@@ -1,4 +1,4 @@
-const { test } = require('@playwright/test')
+const { test, expect } = require('@playwright/test')
 
 test.describe('File operations', () => {
     test('Download', async ({ page }) => {
@@ -12,5 +12,16 @@ test.describe('File operations', () => {
 
         const path = await download.path()
         const url = download.url()
+    })
+
+    test.only('Upload', async ({ page }) => {
+        await page.goto('https://the-internet.herokuapp.com/upload')
+        await page.setInputFiles('#file-upload', 'reporter.js')
+        await page.pause()
+
+        await page.locator('input:has-text("Upload")').click()
+        await expect(page.locator('#uploaded-files')).toHaveText('reporter.js')
+        await expect(page.locator('text="reporter.js"')).toBeVisible()
+        await page.pause()
     })
 })
