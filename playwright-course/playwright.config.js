@@ -2,22 +2,23 @@ const { PlaywrightTestConfig } = require('@playwright/test')
 
 const config = {
     retries: 0,
-    timeout: 100000,
+    timeout: 15000,
     reporter: './reporter.js',
     use: {
         headless: false,
         viewport: { width: 1280, height: 720 },
-        video: 'retain-on-failure',
-        screenshots: 'only-on-failure'
+        video: 'off',
+        screenshots: 'only-on-failure',
+        trace: 'on',
     },
 
     projects: [
         {
-            name: 'Chrome',
+            name: 'chrome',
             use: { browserName: 'chromium' }
         },
         {
-            name: 'Webkit',
+            name: 'webkit',
             use: { browserName: 'webkit' }
         }
     ]
